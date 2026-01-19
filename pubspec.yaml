@@ -60,6 +60,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/splash_screen/Group 1000009773.png
+    - assets/second_page/Ellipse 166.png
+    - assets/first_page/first_portion/Live AC Power.png
+    - assets/first_page/first_portion/Live PR.png
+    - assets/first_page/first_portion/Plant Generation.png
+    - assets/first_page/first_portion/Return PV(Till Today).png
+    - assets/first_page/first_portion/Cumulative PR.png
+    - assets/first_page/first_portion/Total Energy.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
