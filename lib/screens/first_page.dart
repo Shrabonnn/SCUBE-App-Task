@@ -32,7 +32,7 @@ class _FirstPageState extends State<FirstPage> {
             const SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
-              height: 45,
+              height: 40,
               child: ElevatedButton(
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPage(),),);
@@ -41,7 +41,7 @@ class _FirstPageState extends State<FirstPage> {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
-                      fontSize: 20),
+                      fontSize: 16),
                 ),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.lightBlue,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))
