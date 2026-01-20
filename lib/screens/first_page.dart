@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../widgets/table_text.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -27,269 +30,820 @@ class _FirstPageState extends State<FirstPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            const SizedBox(height: 8),
-            SizedBox(
-              width: double.infinity,
-              height: 40,
-              child: ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPage(),),);
-                },
-              child: const Text('2nd Page Navigate    >',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      fontSize: 16),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 8),
+              SizedBox(
+                width: double.infinity,
+                height: 40,
+                child: ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPage(),),);
+                  },
+                child: const Text('2nd Page Navigate    >',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                        fontSize: 16),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.lightBlue,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))
+          
+                  ),),
+              ),
+              const SizedBox(height: 12,),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Live AC Power.png',
+                                    width: 22,
+                                    height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('10000 kW',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
+                                    //SizedBox(height: 2,),
+                                    Text('Live AC Power',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 6,),
+          
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Plant Generation.png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('82.58 %',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
+                                    //SizedBox(height: 2,),
+                                    Text('Plant Generation',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+          
+          
+                      SizedBox(width: 6,),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Live PR.png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('85.61 %',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
+                                    //SizedBox(height: 2,),
+                                    Text('Live PR',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+          
+                    ],
+                  ),
+                  SizedBox(height: 6,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Cumulative PR.png',
+                                    width: 22,
+                                    height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('27.58',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
+                                    //SizedBox(height: 2,),
+                                    Text('Comulative PR',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 6,),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Return PV(Till Today).png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('10000 ৳',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
+                                    Text.rich(TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Return PV',
+                                          style: TextStyle(color: Colors.black54, fontSize: 11),
+                                        ),
+                                        TextSpan(
+                                          text: ' (Till Today)',
+                                          style: TextStyle(color: Colors.black54, fontSize: 7), // choto size
+                                        ),
+                                      ]
+                                    ))
+          
+                                    //Text('Return PV (Till Today)',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 6,),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Total Energy.png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('10000 kWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
+                                    //SizedBox(height: 2,),
+                                    Text('Total Energy',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+          
+                    ],
+                  ),
+          
+                ],
+              ),
+              const SizedBox(height: 12,),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: DataTable(
+                    headingRowColor: MaterialStateProperty.all(Colors.white70),
+                    headingRowHeight: 40,
+                    dataRowHeight: 40,
+                    columnSpacing: 26,
+          
+                    columns: [
+                  DataColumn(label: TableText(' ')),
+                  DataColumn(label: TableText("Yesterday's Data",fontWeight: FontWeight.normal,)),
+                  DataColumn(label: TableText("Today's Data",fontWeight: FontWeight.normal,)),
+                   ],
+          
+                    rows: [
+                  DataRow(
+                      color:  MaterialStateProperty.all(Colors.white),
+                      cells: [
+                    DataCell(TableText('AC Max Power',fontWeight: FontWeight.normal,)),
+                    DataCell(TableText('1636.50 kW')),
+                    DataCell(TableText('2121.88 kW')),
+                  ]),
+                  DataRow(color:  MaterialStateProperty.all(Colors.lightBlue.shade200),
+                      cells: [
+                    DataCell(TableText('Net Energy',fontWeight: FontWeight.normal,)),
+                    DataCell(TableText('6439.16 kWh')),
+                    DataCell(TableText('4875.77 kWh')),
+                  ]),
+                  DataRow(color:  MaterialStateProperty.all(Colors.white),
+                      cells: [
+                    DataCell(TableText('Specific Yield',fontWeight: FontWeight.normal,)),
+                    DataCell(TableText('1.25 kWh/kWp')),
+                    DataCell(TableText('0.94 kWh/kWp')),
+                  ]),
+                  DataRow(color:  MaterialStateProperty.all(Colors.lightBlue.shade200),
+                      cells: [
+                    DataCell(TableText('Net Energy',fontWeight: FontWeight.normal,)),
+                    DataCell(TableText('6439.16 kWh')),
+                    DataCell(TableText('4875.77 kWh')),
+                  ]),
+                  DataRow(color:  MaterialStateProperty.all(Colors.white),
+                      cells: [
+                    DataCell(TableText('Specific Yield',fontWeight: FontWeight.normal,)),
+                    DataCell(TableText('1.25 kWh/kWp')),
+                    DataCell(TableText('0.94 kWh/kWp')),
+                  ]),
+                ]),
+              ),
+              const SizedBox(height: 12,),
+              Container(height: 45,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4)
                 ),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightBlue,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))
-
-                ),),
-            ),
-            const SizedBox(height: 12,),
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                child: Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Image.asset('assets/first_page/first_portion/Live AC Power.png',
-                                  width: 22,
-                                  height: 22,),
-                                ],
-                              ),
-                              SizedBox(width: 4,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('10000 kW',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                  //SizedBox(height: 2,),
-                                  Text('Live AC Power',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 6,),
-
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Image.asset('assets/first_page/first_portion/Plant Generation.png',
-                                    width: 22,
-                                    height: 22,),
-                                ],
-                              ),
-                              SizedBox(width: 4,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('82.58 %',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                  //SizedBox(height: 2,),
-                                  Text('Plant Generation',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-
-
-                    SizedBox(width: 6,),
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Image.asset('assets/first_page/first_portion/Live PR.png',
-                                    width: 22,
-                                    height: 22,),
-                                ],
-                              ),
-                              SizedBox(width: 4,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('85.61 %',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                  //SizedBox(height: 2,),
-                                  Text('Live PR',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-
+                    Image.asset('assets/first_page/fourth_portion/mask_group.png',height: 25,width: 25,),
+                    Text(" Total Num of PV Module : "),
+                    TableText("6372pcs. (585 Wp each)",fontSize: 14,),
                   ],
                 ),
-                SizedBox(height: 6,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
+              ),
+              const SizedBox(height: 12,),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Total AC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
+                                    Text('3000 kW',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
+                                    //SizedBox(height: 2,),
+          
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(
+                      ),
+                      SizedBox(width: 6,),
+          
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    SvgPicture.asset('assets/first_page/fourth_portion/Total_DC_Capacity.svg')
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Total DC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
+                                    Text('3.727 MWp',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
+                                    //SizedBox(height: 2,),
+          
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+          
+          
+                    ],
+                  ),
+                  SizedBox(height: 6,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    SvgPicture.asset('assets/first_page/fourth_portion/Date_of_Commissioning.svg',height: 25,width: 25,fit: BoxFit.contain,)
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Date of Commissioning',style: TextStyle(color: Colors.black,fontSize: 12),),
+                                    Text('17/07/2024',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
+                                    //SizedBox(height: 2,),
+          
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 6,),
+          
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Plant Generation.png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Number of Inverter',style: TextStyle(color: Colors.black,fontSize: 12),),
+                                    Text('30',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
+                                    //SizedBox(height: 2,),
+          
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+          
+          
+                    ],
+                  ),
+                  SizedBox(height: 6,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Total AC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
+                                    Text('3000 kW',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
+                                    //SizedBox(height: 2,),
+          
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 6,),
+          
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset('assets/first_page/first_portion/Plant Generation.png',
+                                      width: 22,
+                                      height: 22,),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Total DC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
+                                    Text('3.727 MWp',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
+                                    //SizedBox(height: 2,),
+          
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+          
+          
+                    ],
+                  ),
+          
+          
+                ],
+              ),
+              const SizedBox(height: 12,),
+              Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8)
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
                             children: [
+                              Text("LT_01",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 16),),
+                              Spacer(),
                               Column(
                                 children: [
-                                  Image.asset('assets/first_page/first_portion/Cumulative PR.png',
-                                  width: 22,
-                                  height: 22,),
-                                ],
-                              ),
-                              SizedBox(width: 4,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('27.58',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                  //SizedBox(height: 2,),
-                                  Text('Comulative PR',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  Row(children: [
+                                    Image.asset('assets/first_page/last_portion/Asset 15.png'),
+                                    SizedBox(width: 4,),
+                                    Text("495.505kWp/ 440kW",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w500),)
+                                  ],)
                                 ],
                               )
                             ],
                           ),
-                        ),
+                          Divider(),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12,top: 4,bottom: 4,right: 12),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000011086.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Lifetime Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                SizedBox(width: 8,),
+                                Row(
+          
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000011031.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Today Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('273.68 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12,top: 4,bottom: 4,right: 12),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000010988.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Prev. Meter  Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('0.00 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                Row(
+          
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000010987.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Live Power',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+          
+          
+                        ],
                       ),
                     ),
-                    SizedBox(width: 6,),
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(
+                  ),
+                  SizedBox(height: 12,),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8)
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
                             children: [
+                              Text("LT_01",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 16),),
+                              Spacer(),
                               Column(
                                 children: [
-                                  Image.asset('assets/first_page/first_portion/Return PV(Till Today).png',
-                                    width: 22,
-                                    height: 22,),
-                                ],
-                              ),
-                              SizedBox(width: 4,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('10000 ৳',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                  Text.rich(TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Return PV',
-                                        style: TextStyle(color: Colors.black54, fontSize: 11),
-                                      ),
-                                      TextSpan(
-                                        text: ' (Till Today)',
-                                        style: TextStyle(color: Colors.black54, fontSize: 7), // choto size
-                                      ),
-                                    ]
-                                  ))
-
-                                  //Text('Return PV (Till Today)',style: TextStyle(color: Colors.black54,fontSize: 11),)
+                                  Row(children: [
+                                    Image.asset('assets/first_page/last_portion/Asset 15.png'),
+                                    SizedBox(width: 4,),
+                                    Text("495.505kWp/ 440kW",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w500))
+                                  ],)
                                 ],
                               )
                             ],
                           ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 6,),
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Image.asset('assets/first_page/first_portion/Total Energy.png',
-                                    width: 22,
-                                    height: 22,),
-                                ],
-                              ),
-                              SizedBox(width: 4,),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('10000 kWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                  //SizedBox(height: 2,),
-                                  Text('Total Energy',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                ],
-                              )
-                            ],
+                          Divider(),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12,top: 4,bottom: 4,right: 12),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000011086.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Lifetime Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                SizedBox(width: 8,),
+                                Row(
+          
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000011031.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Today Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('273.68 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12,top: 4,bottom: 4,right: 12),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000010988.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Prev. Meter  Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('0.00 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                Row(
+          
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image.asset('assets/first_page/last_portion/Group 1000010987.png',
+                                          width: 30,
+                                          height: 40,),
+                                      ],
+                                    ),
+                                    SizedBox(width: 8,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Live Power',style: TextStyle(color: Colors.black,fontSize: 14),),
+                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
+                                        //SizedBox(height: 2,),
+          
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+          
+          
+                        ],
                       ),
                     ),
-
-                  ],
-                ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              ],
-            ),
-            const SizedBox(height: 12,),
-            Column()
-
-
-          ],
+                  ),
+          
+                ],
+              ),
+          
+          
+          
+          
+            ],
+          ),
         ),
       ),
     );
