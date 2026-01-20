@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:scube_app_task/screens/second_page.dart';
 
 import '../widgets/table_text.dart';
 
@@ -34,12 +35,14 @@ class _FirstPageState extends State<FirstPage> {
           child: Column(
             children: [
               const SizedBox(height: 8),
+
+              // navigation
               SizedBox(
                 width: double.infinity,
                 height: 40,
                 child: ElevatedButton(
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPage(),),);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage(),),);
                   },
                 child: const Text('2nd Page Navigate    >',
                     style: TextStyle(
@@ -53,6 +56,9 @@ class _FirstPageState extends State<FirstPage> {
                   ),),
               ),
               const SizedBox(height: 12,),
+
+
+              //First portion
               Column(
                 children: [
                   Row(
@@ -277,6 +283,8 @@ class _FirstPageState extends State<FirstPage> {
                 ],
               ),
               const SizedBox(height: 12,),
+
+              // table
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: DataTable(
@@ -326,6 +334,8 @@ class _FirstPageState extends State<FirstPage> {
                 ]),
               ),
               const SizedBox(height: 12,),
+
+
               Container(height: 45,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -340,6 +350,8 @@ class _FirstPageState extends State<FirstPage> {
                 ),
               ),
               const SizedBox(height: 12,),
+
+              //fourth portion
               Column(
                 children: [
                   Row(
@@ -391,7 +403,7 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Column(
                                   children: [
-                                    SvgPicture.asset('assets/first_page/fourth_portion/Total_DC_Capacity.svg')
+                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png')
                                   ],
                                 ),
                                 SizedBox(width: 4,),
@@ -429,7 +441,7 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Column(
                                   children: [
-                                    SvgPicture.asset('assets/first_page/fourth_portion/Date_of_Commissioning.svg',height: 25,width: 25,fit: BoxFit.contain,)
+                                    Image.asset('assets/first_page/fourth_portion/date_of_comissioning.png',width: 25,height: 25,)
                                   ],
                                 ),
                                 SizedBox(width: 4,),
@@ -461,7 +473,7 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Column(
                                   children: [
-                                    Image.asset('assets/first_page/first_portion/Plant Generation.png',
+                                    Image.asset('assets/first_page/fourth_portion/number_of_inverter.png',
                                       width: 22,
                                       height: 22,),
                                   ],
@@ -535,9 +547,7 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Column(
                                   children: [
-                                    Image.asset('assets/first_page/first_portion/Plant Generation.png',
-                                      width: 22,
-                                      height: 22,),
+                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png',width: 25,height: 25,)
                                   ],
                                 ),
                                 SizedBox(width: 4,),
@@ -547,7 +557,7 @@ class _FirstPageState extends State<FirstPage> {
                                     Text('Total DC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
                                     Text('3.727 MWp',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
                                     //SizedBox(height: 2,),
-          
+
                                   ],
                                 )
                               ],
@@ -564,6 +574,10 @@ class _FirstPageState extends State<FirstPage> {
                 ],
               ),
               const SizedBox(height: 12,),
+
+
+
+              // last portion
               Column(
                 children: [
                   Container(

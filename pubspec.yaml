@@ -69,15 +69,26 @@ flutter:
     - assets/first_page/first_portion/Cumulative PR.png
     - assets/first_page/first_portion/Total Energy.png
     - assets/first_page/fourth_portion/mask_group.png
-    - assets/first_page/fourth_portion/Total_DC_Capacity.svg
-    - assets/first_page/fourth_portion/Number of Inverter.svg
-    - assets/first_page/fourth_portion/Date_of_Commissioning.svg
     - assets/first_page/fourth_portion/Group 1000011085.png
     - assets/first_page/last_portion/Group 1000011031.png
     - assets/first_page/last_portion/Asset 15.png
     - assets/first_page/last_portion/Group 1000011086.png
     - assets/first_page/last_portion/Group 1000010987.png
     - assets/first_page/last_portion/Group 1000010988.png
+    - assets/first_page/fourth_portion/date_of_comissioning.png
+    - assets/first_page/fourth_portion/total_dc_capacity.png
+    - assets/first_page/fourth_portion/number_of_inverter.png
+    - assets/second_page/power_box.png
+    - assets/second_page/solar_cell.png
+    - assets/second_page/power.png
+    - assets/second_page/data_view_1.png
+    - assets/second_page/data_view_2.png
+    - assets/second_page/data_view_3.png
+    - assets/second_page/last portion/analysis.png
+    - assets/second_page/last portion/gas.png
+    - assets/second_page/last portion/water.png
+    - assets/second_page/last portion/plant.png
+    - assets/second_page/last portion/generator.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
