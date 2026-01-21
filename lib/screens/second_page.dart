@@ -34,7 +34,7 @@ class _SecondPageState extends State<SecondPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
               SizedBox(
@@ -63,22 +63,50 @@ class _SecondPageState extends State<SecondPage> {
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(12)
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey)
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 10),
-                            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.lightBlue.shade100,
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(12),topRight: Radius.circular(12)),
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: Colors.grey,
+                                  width: .3
+                                )
+                              )
+                            ),
+                            child: Row(
                               children: [
-                                Text("Summary"),
-                                Text("SLD"),
-                                Text("Data"),
+                                Expanded(
+                                  child: Container(decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.only(topRight: Radius.circular(12),topLeft:  Radius.circular(12))
+                                  ),child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(child: Text("Summary",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w500),)),
+                                  )),
+                                ),
+                                Expanded(
+                                  child: Container(child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(child: Text("SLD",style: TextStyle(fontSize: 20,color: Colors.black54),)),
+                                  )),
+                                ),
+                                Expanded(
+                                  child: Container(child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(child: Text("Data",style: TextStyle(fontSize: 20,color: Colors.black54),)),
+                                  )),
+                                ),
                               ],
                             ),
                           ),
-                          Divider(),
+                          SizedBox(height: 8,),
                           Row(mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("Electricity",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 24,color: Colors.grey),)
@@ -128,7 +156,6 @@ class _SecondPageState extends State<SecondPage> {
                           SizedBox(height: 16,),
 
 
-                          // progress indicator
                           Container(
                             height: 38,
                             width: 280,
@@ -204,250 +231,257 @@ class _SecondPageState extends State<SecondPage> {
                             padding: const EdgeInsets.symmetric(horizontal: 8.0),
                             child: SizedBox(
                               height: 280,
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.lightBlue.shade100,
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(
-                                          color: Colors.black54,
-                                          width: .8
-                                        ),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          // for image
-                                          Padding(
-                                            padding: const EdgeInsets.all(16.0),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset('assets/second_page/solar_cell.png',height: 25,width: 25,),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox( width: 8,),
-                                          // for data type
-                                          Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                      Image.asset('assets/second_page/data_view_1.png'),
-                                                      SizedBox(width: 8,),
-                                                      Text("Data View",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                                      SizedBox(width: 24,),
-                                                      Text("(Active)",style: TextStyle(color: Colors.blue),)
-                                                    ],),
-                                                    SizedBox(height: 4,),
-                                                    DemoRichText(
-                                                      highlightedText: "Data 1      :",
-                                                      normalText: " 55505.63",
-                                                    ),
-                                                    DemoRichText(
-                                                      highlightedText: "Data 2      :",
-                                                      normalText: " 55505.63",
-                                                    ),
-                                                  ],
-                                                ),
-                                              )
-
-                                            ],
-                                          ),
-                                          Spacer(),
-                                          Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
-
-                                      ],),
-
-                                    ),
-                                    SizedBox(height: 8,),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.lightBlue.shade100,
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(
-                                          color: Colors.black54,
-                                          width: .8
-                                        ),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          // for image
-                                          Padding(
-                                            padding: const EdgeInsets.all(16.0),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset('assets/second_page/power_box.png',height: 25,width: 25,),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox( width: 8,),
-                                          // for data type
-                                          Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                      Image.asset('assets/second_page/data_view_2.png'),
-                                                      SizedBox(width: 8,),
-                                                      Text("Data View 2",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                                      SizedBox(width: 24,),
-                                                      Text("(Active)",style: TextStyle(color: Colors.blue),)
-                                                    ],),
-                                                    SizedBox(height: 4,),
-                                                    DemoRichText(
-                                                      highlightedText: "Data 1      :",
-                                                      normalText: " 55505.63",
-                                                    ),
-                                                    DemoRichText(
-                                                      highlightedText: "Data 2      :",
-                                                      normalText: " 55505.63",
-                                                    ),
-                                                  ],
-                                                ),
-                                              )
-
-                                            ],
-                                          ),
-                                          Spacer(),
-                                          Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
-
-                                      ],),
-
-                                    ),
-                                    SizedBox(height: 8,),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.lightBlue.shade100,
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(
+                              child: Scrollbar(
+                                trackVisibility: true,
+                                thumbVisibility: true,
+                                thickness: 2,
+                                interactive: true,
+                                radius: Radius.circular(8),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.lightBlue.shade100,
+                                          borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(
                                             color: Colors.black54,
                                             width: .8
+                                          ),
                                         ),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          // for image
-                                          Padding(
-                                            padding: const EdgeInsets.all(16.0),
-                                            child: Column(
+                                        child: Row(
+                                          children: [
+                                            // for image
+                                            Padding(
+                                              padding: const EdgeInsets.all(16.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset('assets/second_page/solar_cell.png',height: 25,width: 25,),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox( width: 8,),
+                                            // for data type
+                                            Column(
                                               mainAxisAlignment: MainAxisAlignment.center,
                                               children: [
-                                                Image.asset('assets/second_page/power.png',height: 25,width: 25,),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox( width: 8,),
-                                          // for data type
-                                          Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                        Image.asset('assets/second_page/data_view_3.png'),
-                                                        SizedBox(width: 8,),
-                                                        Text("Data View 3",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                                                        SizedBox(width: 24,),
-                                                        Text("(Inactive)",style: TextStyle(color: Colors.red),)
-                                                      ],),
-                                                    SizedBox(height: 4,),
-                                                    DemoRichText(
-                                                      highlightedText: "Data 1      :",
-                                                      normalText: " 55505.63",
-                                                    ),
-                                                    DemoRichText(
-                                                      highlightedText: "Data 2      :",
-                                                      normalText: " 55505.63",
-                                                    ),
-                                                  ],
-                                                ),
-                                              )
-
-                                            ],
-                                          ),
-                                          Spacer(),
-                                          Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
-
-                                        ],),
-
-                                    ),
-                                    SizedBox(height: 8,),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.lightBlue.shade100,
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(
-                                            color: Colors.black54,
-                                            width: .8
-                                        ),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          // for image
-                                          Padding(
-                                            padding: const EdgeInsets.all(16.0),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                Image.asset('assets/second_page/solar_cell.png',height: 25,width: 25,),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox( width: 8,),
-                                          // for data type
-                                          Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: [
-                                                    Row(
-                                                      children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Row(
+                                                        children: [
                                                         Image.asset('assets/second_page/data_view_1.png'),
                                                         SizedBox(width: 8,),
-                                                        Text("Total Solar",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                                        Text("Data View",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
                                                         SizedBox(width: 24,),
                                                         Text("(Active)",style: TextStyle(color: Colors.blue),)
                                                       ],),
-                                                    SizedBox(height: 4,),
-                                                    DemoRichText(
-                                                      highlightedText: "Live Power       :",
-                                                      normalText: " 55505.63 kW",
-                                                    ),
-                                                    DemoRichText(
-                                                      highlightedText: "Today Energy   :",
-                                                      normalText: " 55505.63 kWh",
-                                                    ),
-                                                  ],
-                                                ),
-                                              )
+                                                      SizedBox(height: 4,),
+                                                      DemoRichText(
+                                                        highlightedText: "Data 1      :",
+                                                        normalText: " 55505.63",
+                                                      ),
+                                                      DemoRichText(
+                                                        highlightedText: "Data 2      :",
+                                                        normalText: " 55505.63",
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
 
-                                            ],
-                                          ),
-                                          Spacer(),
-                                          Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
+                                              ],
+                                            ),
+                                            Spacer(),
+                                            Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
 
                                         ],),
 
-                                    ),
+                                      ),
+                                      SizedBox(height: 8,),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.lightBlue.shade100,
+                                          borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(
+                                            color: Colors.black54,
+                                            width: .8
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            // for image
+                                            Padding(
+                                              padding: const EdgeInsets.all(16.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset('assets/second_page/power_box.png',height: 25,width: 25,),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox( width: 8,),
+                                            // for data type
+                                            Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                        Image.asset('assets/second_page/data_view_2.png'),
+                                                        SizedBox(width: 8,),
+                                                        Text("Data View 2",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                                        SizedBox(width: 24,),
+                                                        Text("(Active)",style: TextStyle(color: Colors.blue),)
+                                                      ],),
+                                                      SizedBox(height: 4,),
+                                                      DemoRichText(
+                                                        highlightedText: "Data 1      :",
+                                                        normalText: " 55505.63",
+                                                      ),
+                                                      DemoRichText(
+                                                        highlightedText: "Data 2      :",
+                                                        normalText: " 55505.63",
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
 
-                                  ],
+                                              ],
+                                            ),
+                                            Spacer(),
+                                            Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
+
+                                        ],),
+
+                                      ),
+                                      SizedBox(height: 8,),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.lightBlue.shade100,
+                                          borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(
+                                              color: Colors.black54,
+                                              width: .8
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            // for image
+                                            Padding(
+                                              padding: const EdgeInsets.all(16.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset('assets/second_page/power.png',height: 25,width: 25,),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox( width: 8,),
+                                            // for data type
+                                            Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Image.asset('assets/second_page/data_view_3.png'),
+                                                          SizedBox(width: 8,),
+                                                          Text("Data View 3",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                                          SizedBox(width: 24,),
+                                                          Text("(Inactive)",style: TextStyle(color: Colors.red),)
+                                                        ],),
+                                                      SizedBox(height: 4,),
+                                                      DemoRichText(
+                                                        highlightedText: "Data 1      :",
+                                                        normalText: " 55505.63",
+                                                      ),
+                                                      DemoRichText(
+                                                        highlightedText: "Data 2      :",
+                                                        normalText: " 55505.63",
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
+
+                                              ],
+                                            ),
+                                            Spacer(),
+                                            Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
+
+                                          ],),
+
+                                      ),
+                                      SizedBox(height: 8,),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.lightBlue.shade100,
+                                          borderRadius: BorderRadius.circular(4),
+                                          border: Border.all(
+                                              color: Colors.black54,
+                                              width: .8
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            // for image
+                                            Padding(
+                                              padding: const EdgeInsets.all(16.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Image.asset('assets/second_page/solar_cell.png',height: 25,width: 25,),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox( width: 8,),
+                                            // for data type
+                                            Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsets.all(8.0),
+                                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Image.asset('assets/second_page/data_view_1.png'),
+                                                          SizedBox(width: 8,),
+                                                          Text("Total Solar",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                                                          SizedBox(width: 24,),
+                                                          Text("(Active)",style: TextStyle(color: Colors.blue),)
+                                                        ],),
+                                                      SizedBox(height: 4,),
+                                                      DemoRichText(
+                                                        highlightedText: "Live Power       :",
+                                                        normalText: " 55505.63 kW",
+                                                      ),
+                                                      DemoRichText(
+                                                        highlightedText: "Today Energy   :",
+                                                        normalText: " 55505.63 kWh",
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
+
+                                              ],
+                                            ),
+                                            Spacer(),
+                                            Icon(Icons.chevron_right_outlined,color: Colors.blue.shade900,size: 40,)
+
+                                          ],),
+
+                                      ),
+
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

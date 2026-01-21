@@ -40,8 +40,6 @@ class _FirstPageState extends State<FirstPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 8),
-
               // navigation
               SizedBox(
                 width: double.infinity,
