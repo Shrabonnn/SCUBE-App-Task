@@ -65,7 +65,7 @@ class _FirstPageState extends State<FirstPage> {
               const SizedBox(height: 12,),
 
 
-              //First portion
+              //first portion
               Column(
                 children: [
                   Row(
