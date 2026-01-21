@@ -42,7 +42,7 @@ class _SecondPageState extends State<SecondPage> {
                 height: 40,
                 child: ElevatedButton(
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FirstPage(),),);
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>FirstPage(),),);
                   },
                   child: const Text('1st Page Navigate    >',
                     style: TextStyle(
@@ -483,8 +483,9 @@ class _SecondPageState extends State<SecondPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.center,
+                                    mainAxisAlignment:MainAxisAlignment.start,
                                     children: [
+                                      SizedBox(width: 6,),
                                       Image.asset('assets/second_page/last portion/analysis.png',
                                         width: 22,
                                         height: 22,),
@@ -506,8 +507,10 @@ class _SecondPageState extends State<SecondPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.center,
+                                    mainAxisAlignment:MainAxisAlignment.start,
                                     children: [
+
+                                      SizedBox(width: 6,),
                                       Image.asset('assets/second_page/last portion/generator.png',
                                         width: 22,
                                         height: 22,),
@@ -538,13 +541,14 @@ class _SecondPageState extends State<SecondPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.center,
+                                    mainAxisAlignment:MainAxisAlignment.start,
                                     children: [
-                                      Image.asset('assets/second_page/last portion/analysis.png',
+
+                                      Image.asset('assets/second_page/last portion/plant.png',
                                         width: 22,
                                         height: 22,),
                                       SizedBox(width: 8,),
-                                      Text('Analysis Pro',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
+                                      Text('Plant Summery',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
                                     ],
                                   ),
                                 ),
@@ -561,13 +565,15 @@ class _SecondPageState extends State<SecondPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.center,
+                                    mainAxisAlignment:MainAxisAlignment.start,
                                     children: [
-                                      Image.asset('assets/second_page/last portion/generator.png',
+
+                                      SizedBox(width: 6,),
+                                      Image.asset('assets/second_page/last portion/gas.png',
                                         width: 22,
                                         height: 22,),
                                       SizedBox(width: 8,),
-                                      Text('G. Generator',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
+                                      Text('Natural Gas',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
                                     ],
                                   ),
                                 ),
@@ -593,13 +599,14 @@ class _SecondPageState extends State<SecondPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.center,
+                                    mainAxisAlignment:MainAxisAlignment.start,
                                     children: [
-                                      Image.asset('assets/second_page/last portion/analysis.png',
+                                      SizedBox(width: 6,),
+                                      Image.asset('assets/second_page/last portion/generator.png',
                                         width: 22,
                                         height: 22,),
                                       SizedBox(width: 8,),
-                                      Text('Analysis Pro',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
+                                      Text('D. Generator',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
                                     ],
                                   ),
                                 ),
@@ -616,13 +623,14 @@ class _SecondPageState extends State<SecondPage> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.center,
+                                    mainAxisAlignment:MainAxisAlignment.start,
                                     children: [
-                                      Image.asset('assets/second_page/last portion/generator.png',
+                                      SizedBox(width: 6,),
+                                      Image.asset('assets/second_page/last portion/water.png',
                                         width: 22,
                                         height: 22,),
                                       SizedBox(width: 8,),
-                                      Text('G. Generator',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
+                                      Text('Water Process',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 18,color: Colors.black54),),
                                     ],
                                   ),
                                 ),

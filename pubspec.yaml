@@ -89,6 +89,9 @@ flutter:
     - assets/second_page/last portion/water.png
     - assets/second_page/last portion/plant.png
     - assets/second_page/last portion/generator.png
+    - assets/first_page/second_portion/morning.png
+    - assets/first_page/second_portion/night.png
+    - assets/first_page/second_portion/afternoon.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

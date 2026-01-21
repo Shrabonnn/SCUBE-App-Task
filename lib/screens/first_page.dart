@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:scube_app_task/models/time_weather.dart';
 import 'package:scube_app_task/screens/second_page.dart';
+import 'package:scube_app_task/widgets/rich_text.dart';
 
 import '../widgets/table_text.dart';
 
@@ -14,6 +16,10 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
+
+    final currentWeather = getCurrentWeather();
+
+
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade100,
       appBar: AppBar(
@@ -42,7 +48,7 @@ class _FirstPageState extends State<FirstPage> {
                 height: 40,
                 child: ElevatedButton(
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage(),),);
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SecondPage(),),);
                   },
                 child: const Text('2nd Page Navigate    >',
                     style: TextStyle(
@@ -284,6 +290,79 @@ class _FirstPageState extends State<FirstPage> {
               ),
               const SizedBox(height: 12,),
 
+              //module Temp
+              Container(
+                height: 110,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    // temp section
+                    Container(
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12)
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            RichText(text: TextSpan(
+                              children: [
+                                TextSpan(text: currentWeather.temp ,style: TextStyle(fontSize: 30,color: Colors.blue,fontWeight: FontWeight.w700)),
+                                TextSpan(text: 'C',style: TextStyle(fontSize: 25,color: Colors.blue)),
+
+                              ]
+                            ) ),
+                            SizedBox(height: 8,),
+
+                            Text("Module",style: TextStyle(fontSize: 15,color: Colors.black54,fontWeight: FontWeight.w400),),
+                            Text("Temperature",style: TextStyle(fontSize: 15,color: Colors.black54,fontWeight: FontWeight.w400)),
+                          ],
+                        ),
+                      ),
+                    ),
+                    //icon section cloud
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4.0,horizontal: 8),
+                      child: Container(
+                        // for text
+                        child: Row(
+                          children: [
+                            // text
+                            Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                //first line text
+                                Text("26 MPH / NW",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white),),
+                                Text("Wind Speed & Direction",style: TextStyle(fontSize: 14,color: Colors.white),),
+
+                                Text("15.20 w/m^2",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white),),
+                                Text("Effective Irradiation",style: TextStyle(fontSize: 14,color: Colors.white),),
+                              ],
+                            ),
+                            //icon
+                            Column(mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Image.asset(currentWeather.image,height: 80,width: 70,)
+
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+
+                  ],
+                ),
+              ),
+              SizedBox(height: 12,),
+
               // table
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
@@ -403,7 +482,7 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Column(
                                   children: [
-                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png')
+                                    Image.asset('assets/first_page/fourth_portion/total_dc_capacity.png')
                                   ],
                                 ),
                                 SizedBox(width: 4,),
@@ -547,7 +626,7 @@ class _FirstPageState extends State<FirstPage> {
                               children: [
                                 Column(
                                   children: [
-                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png',width: 25,height: 25,)
+                                    Image.asset('assets/first_page/fourth_portion/total_dc_capacity.png',width: 25,height: 25,)
                                   ],
                                 ),
                                 SizedBox(width: 4,),
@@ -631,7 +710,7 @@ class _FirstPageState extends State<FirstPage> {
                                     )
                                   ],
                                 ),
-                                SizedBox(width: 8,),
+                                Spacer(),
                                 Row(
           
                                   children: [
@@ -683,6 +762,7 @@ class _FirstPageState extends State<FirstPage> {
                                     )
                                   ],
                                 ),
+                                Spacer(),
                                 Row(
           
                                   children: [
@@ -766,7 +846,7 @@ class _FirstPageState extends State<FirstPage> {
                                     )
                                   ],
                                 ),
-                                SizedBox(width: 8,),
+                                Spacer(),
                                 Row(
           
                                   children: [
@@ -818,6 +898,7 @@ class _FirstPageState extends State<FirstPage> {
                                     )
                                   ],
                                 ),
+                                Spacer(),
                                 Row(
           
                                   children: [
