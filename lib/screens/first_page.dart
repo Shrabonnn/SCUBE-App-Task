@@ -4,6 +4,9 @@ import 'package:scube_app_task/models/time_weather.dart';
 import 'package:scube_app_task/screens/second_page.dart';
 import 'package:scube_app_task/widgets/rich_text.dart';
 
+import '../widgets/capacity_info_card.dart';
+import '../widgets/energy_info_card.dart';
+import '../widgets/info_card.dart';
 import '../widgets/table_text.dart';
 
 class FirstPage extends StatefulWidget {
@@ -68,141 +71,39 @@ class _FirstPageState extends State<FirstPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/first_portion/Live AC Power.png',
-                                    width: 22,
-                                    height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('10000 kW',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                    //SizedBox(height: 2,),
-                                    Text('Live AC Power',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                      InfoCard(
+                        imagePath: 'assets/first_page/first_portion/Live AC Power.png',
+                        value: '10000 kW',
+                        title: 'Live AC Power',
                       ),
                       SizedBox(width: 6,),
-          
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/first_portion/Plant Generation.png',
-                                      width: 22,
-                                      height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('82.58 %',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                    //SizedBox(height: 2,),
-                                    Text('Plant Generation',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+
+                      InfoCard(
+                        imagePath: 'assets/first_page/first_portion/Plant Generation.png',
+                        value: '82.58 %',
+                        title: 'Plant Generation',
                       ),
-          
-          
+
+
+
                       SizedBox(width: 6,),
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/first_portion/Live PR.png',
-                                      width: 22,
-                                      height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('85.61 %',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                    //SizedBox(height: 2,),
-                                    Text('Live PR',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                      InfoCard(
+                        imagePath: 'assets/first_page/first_portion/Live PR.png',
+                        value: '85.61 %',
+                        title: 'Live PR',
                       ),
-          
+
+
                     ],
                   ),
                   SizedBox(height: 6,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/first_portion/Cumulative PR.png',
-                                    width: 22,
-                                    height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('27.58',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                    //SizedBox(height: 2,),
-                                    Text('Comulative PR',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                      InfoCard(
+                        imagePath: 'assets/first_page/first_portion/Cumulative PR.png',
+                        value: '27.58',
+                        title: 'Cumulative PR',
                       ),
                       SizedBox(width: 6,),
                       Expanded(
@@ -239,7 +140,7 @@ class _FirstPageState extends State<FirstPage> {
                                         ),
                                       ]
                                     ))
-          
+
                                     //Text('Return PV (Till Today)',style: TextStyle(color: Colors.black54,fontSize: 11),)
                                   ],
                                 )
@@ -249,38 +150,14 @@ class _FirstPageState extends State<FirstPage> {
                         ),
                       ),
                       SizedBox(width: 6,),
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/first_portion/Total Energy.png',
-                                      width: 22,
-                                      height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('10000 kWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 14),),
-                                    //SizedBox(height: 2,),
-                                    Text('Total Energy',style: TextStyle(color: Colors.black54,fontSize: 11),)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+
+                      InfoCard(
+                        imagePath: 'assets/first_page/first_portion/Total Energy.png',
+                        value: '10000 kWh',
+                        title: 'Total Energy',
                       ),
-          
+
+
                     ],
                   ),
           
@@ -434,216 +311,59 @@ class _FirstPageState extends State<FirstPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png',
-                                      width: 22,
-                                      height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Total AC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
-                                    Text('3000 kW',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
-                                    //SizedBox(height: 2,),
-          
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                      CapacityInfoCard(
+                        imagePath: 'assets/first_page/fourth_portion/Group 1000011085.png',
+                        title: 'Total AC Capacity',
+                        value: '3000 kW',
                       ),
                       SizedBox(width: 6,),
-          
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/fourth_portion/total_dc_capacity.png')
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Total DC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
-                                    Text('3.727 MWp',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
-                                    //SizedBox(height: 2,),
-          
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                      CapacityInfoCard(
+                        imagePath: 'assets/first_page/fourth_portion/total_dc_capacity.png',
+                        title: 'Total DC Capacity',
+                        value: '3.727 MWp',
                       ),
-          
-          
                     ],
                   ),
                   SizedBox(height: 6,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/fourth_portion/date_of_comissioning.png',width: 25,height: 25,)
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Date of Commissioning',style: TextStyle(color: Colors.black,fontSize: 12),),
-                                    Text('17/07/2024',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
-                                    //SizedBox(height: 2,),
-          
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                      CapacityInfoCard(
+                        imagePath: 'assets/first_page/fourth_portion/date_of_comissioning.png',
+                        title: 'Date of Commissioning',
+                        value: '17/07/2024',
                       ),
-                      SizedBox(width: 6,),
-          
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/fourth_portion/number_of_inverter.png',
-                                      width: 22,
-                                      height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Number of Inverter',style: TextStyle(color: Colors.black,fontSize: 12),),
-                                    Text('30',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
-                                    //SizedBox(height: 2,),
-          
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-          
-          
-                    ],
-                  ),
-                  SizedBox(height: 6,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/fourth_portion/Group 1000011085.png',
-                                      width: 22,
-                                      height: 22,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Total AC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
-                                    Text('3000 kW',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
-                                    //SizedBox(height: 2,),
-          
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 6,),
-          
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Image.asset('assets/first_page/fourth_portion/total_dc_capacity.png',width: 25,height: 25,)
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text('Total DC Capacity',style: TextStyle(color: Colors.black,fontSize: 12),),
-                                    Text('3.727 MWp',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12),),
-                                    //SizedBox(height: 2,),
 
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                      SizedBox(width: 6,),
+
+                      CapacityInfoCard(
+                        imagePath: 'assets/first_page/fourth_portion/number_of_inverter.png',
+                        title: 'Number of Inverter',
+                        value: '30',
                       ),
-          
-          
+
+                    ],
+                  ),
+                  SizedBox(height: 6,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CapacityInfoCard(
+                        imagePath: 'assets/first_page/fourth_portion/Group 1000011085.png',
+                        title: 'Total AC Capacity',
+                        value: '3000 kW',
+                      ),
+
+                      SizedBox(width: 6,),
+
+                      CapacityInfoCard(
+                        imagePath: 'assets/first_page/fourth_portion/total_dc_capacity.png',
+                        title: 'Total DC Capacity',
+                        value: '3.727 MWp',
+                      ),
+
+
+
                     ],
                   ),
           
@@ -687,50 +407,19 @@ class _FirstPageState extends State<FirstPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000011086.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Lifetime Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000011086.png',
+                                  label: 'Lifetime Energy',
+                                  value: '352.96 MWh',
                                 ),
+
                                 Spacer(),
-                                Row(
-          
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000011031.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Today Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('273.68 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000011031.png',
+                                  label: 'Today Energy',
+                                  value: '273.68 MWh',
                                 ),
+
                               ],
                             ),
                           ),
@@ -739,50 +428,19 @@ class _FirstPageState extends State<FirstPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000010988.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Prev. Meter  Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('0.00 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000010988.png',
+                                  label: 'Prev. Meter Energy',
+                                  value: '0.00 MWh',
                                 ),
+
                                 Spacer(),
-                                Row(
-          
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000010987.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Live Power',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000010987.png',
+                                  label: 'Live Power',
+                                  value: '352.96 MWh',
                                 ),
+
                               ],
                             ),
                           )
@@ -811,7 +469,7 @@ class _FirstPageState extends State<FirstPage> {
                                   Row(children: [
                                     Image.asset('assets/first_page/last_portion/Asset 15.png'),
                                     SizedBox(width: 4,),
-                                    Text("495.505kWp/ 440kW",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w500))
+                                    Text("495.505kWp/ 440kW",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w500),)
                                   ],)
                                 ],
                               )
@@ -823,50 +481,19 @@ class _FirstPageState extends State<FirstPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000011086.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Lifetime Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000011086.png',
+                                  label: 'Lifetime Energy',
+                                  value: '352.96 MWh',
                                 ),
+
                                 Spacer(),
-                                Row(
-          
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000011031.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Today Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('273.68 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000011031.png',
+                                  label: 'Today Energy',
+                                  value: '273.68 MWh',
                                 ),
+
                               ],
                             ),
                           ),
@@ -875,59 +502,29 @@ class _FirstPageState extends State<FirstPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000010988.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Prev. Meter  Energy',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('0.00 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000010988.png',
+                                  label: 'Prev. Meter Energy',
+                                  value: '0.00 MWh',
                                 ),
+
                                 Spacer(),
-                                Row(
-          
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Image.asset('assets/first_page/last_portion/Group 1000010987.png',
-                                          width: 30,
-                                          height: 40,),
-                                      ],
-                                    ),
-                                    SizedBox(width: 8,),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Live Power',style: TextStyle(color: Colors.black,fontSize: 14),),
-                                        Text('352.96 MWh',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 15),),
-                                        //SizedBox(height: 2,),
-          
-                                      ],
-                                    )
-                                  ],
+                                EnergyInfoCard(
+                                  imagePath: 'assets/first_page/last_portion/Group 1000010987.png',
+                                  label: 'Live Power',
+                                  value: '352.96 MWh',
                                 ),
+
                               ],
                             ),
                           )
-          
-          
+
+
                         ],
                       ),
                     ),
                   ),
+
           
                 ],
               ),
